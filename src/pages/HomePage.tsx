@@ -67,7 +67,7 @@ export default function HomePage() {
             <div className="relative">
               <div className="absolute -inset-4 bg-lt-yellow/10 rounded-lg transform rotate-3" />
               <img
-                src="https://images.unsplash.com/photo-1572375992501-4b0892d50c69?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                src="https://www.easymalc.co.uk/wp-content/uploads/2019/09/010-Statue-of-Maironis.jpg"
                 alt="Lietuvos gamta"
                 className="relative rounded-lg shadow-xl"
               />
