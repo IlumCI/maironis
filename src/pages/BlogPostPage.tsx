@@ -8,7 +8,7 @@ import { createSafeHTML } from "../utils/security"
 
 // Import full blog posts data
 // We'll reuse the same data structure from BlogPage to keep consistency
-interface BlogPost {
+export interface BlogPost {
   id: string
   date: string
   title: string

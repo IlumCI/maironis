@@ -2,6 +2,20 @@
  * Runtime security checks and protections
  */
 
+// Define console methods that we want to potentially disable
+const consoleMethods = ['log', 'info', 'warn', 'error', 'debug'] as const
+type ConsoleMethod = typeof consoleMethods[number]
+
+// No-operation function
+function noop() {}
+
+// Function to disable all console methods
+export function disableConsole() {
+  consoleMethods.forEach((method: ConsoleMethod) => {
+    (console as any)[method] = noop;
+  });
+}
+
 // Initialize security measures
 export function initSecurity() {
   // Prevent clickjacking by checking if we're in an iframe
@@ -40,15 +54,5 @@ function checkURLParameters() {
 
       window.history.replaceState({}, document.title, newUrl)
     }
-  })
-}
-
-// Disable console in production (optional security measure)
-function disableConsole() {
-  const noop = () => {}
-  const methods = ["log", "debug", "info", "warn", "error", "assert", "dir", "trace"]
-
-  methods.forEach((method) => {
-    console[method] = noop
   })
 }
