@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased bg-stone-50;
+  }
+
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .poem-text {
+    @apply font-serif text-lg leading-relaxed italic text-stone-800;
+  }
+  
+  .section-title {
+    @apply text-3xl font-bold font-serif mb-6 text-stone-900;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-lg p-6 transition-transform duration-300 hover:-translate-y-1;
+  }
+}
+
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
